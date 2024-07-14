@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневник программиста</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <img src="../static/img/logo.svg" alt="logo" width="30" height="30">
+        <ul class="main-list">
+            <li class="list__item">
+              <a href="">
+                <img src="../static/img/login.svg" alt="login" width="20" height="20">
+              </a>
+        </ul>
+      </header>
+      <main>
+        {% block content %}
+        <form action="{{ url_for('form_create') }}" method="post" class="creat-form">
+            <div class="form__card">
+                <a href="{{ url_for('index') }}">Go Back</a>
+                <img class="card__img" src="../static/img/post_icon.png" width="250" height="250" alt="post_icon">
+                <div class="form__inputs">
+                    <label for="title">
+                        <input class="form__input" type="text" name="title" id="title" placeholder="Введите заголовок" required>
+                    </label>
+                    <label for="subtitle">
+                        <input class="form__input" type="text" name="subtitle" id="subtitle" placeholder="Введите подзаголовок" required>
+                    </label>
+                </div>
+                <label for="text">
+                    <textarea class="form__text" name="text" id="text" cols="30" rows="10" required placeholder="Напишите что-нибудь...">{{text}} {{result}}</textarea>
+                </label>
+                <a href="./voice" class="help__button">Запись🎙️</a>
+                <a  href="./translate" class="help__button">Запись🎙️ + перевод на английский</a>
+                <button class="form__button">Создать</button>
+            </div>
+        </form>
+        {% endblock %}
+      </main>
+</body>
+</html>
