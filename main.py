@@ -1,4 +1,3 @@
-#Импорт
 from flask import Flask, render_template,request, redirect
 #Подключение библиотеки баз данных
 from flask_sqlalchemy import SQLAlchemy
@@ -118,8 +117,41 @@ def home():
     return render_template('index.html')
 
 
+def result_calculate(size, lights, device):
+    #Переменные для энергозатратности приборов
+    return size + lights  + device 
 
 
+@app.route('/1')
+def opros():
+    return render_template('opros.html')
+
+
+@app.route('/<size>')
+def lights(size):
+    return render_template(
+                            'opros2.html', 
+                            size=size
+                           )
+
+
+@app.route('/<size>/<lights>')
+def electronics(size, lights):
+    return render_template(
+                            'opros3.html',                           
+                            size = size, 
+                            lights = lights                           
+                           )
+
+
+@app.route('/<size>/<lights>/<device>')
+def end(size, lights, device):
+    return render_template('end.html', 
+                            result=result_calculate(int(size),
+                                                    int(lights), 
+                                                    int(device)
+                                                    )
+                        )
 
 #Форма карты
 @app.route('/form_create', methods=['GET','POST'])
