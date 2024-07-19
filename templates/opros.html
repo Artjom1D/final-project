@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Глобальное потепление</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__text">
+        <h1>Узнай, как много ты знаешь о Глобальном потепление!</h1>
+        </div>
+    </header>
+    <main>
+      {% block content %}
+      <h2 class="main__title">Какой газ является наиболее значительным вкладчиком в эффект парникового газа,</h2> 
+      <h2 class="main__title">вызывающего глобальное потепление?</h2>
+      
+        <li class="list__item">
+          <a href="{{'/2'}}">
+            <img class="item__img" src="../static/img/light.svg" alt="light">
+            <span> Метан (CH₄)</span></a>
+        </li>
+        <!--Задание №2 -->
+        <li class="list__item">
+          <a href="{{'/2'}}"> 
+            <img class=" item__img" src="../static/img/light.svg" alt="light">
+            <span>Водяной пар (H₂O)</span></a>
+        </li>
+      
+      
+        <li class="list__item">
+          <a href="{{'/10' }}">
+            <img class="item__img" src="../static/img/light.svg" alt="light">
+            <span>Углекислый газ (CO₂)</span></a>
+        </li>
+        <li class="list__item">
+          <a href="{{'/2' }}">
+            <img class="item__img" src="../static/img/light.svg" alt="light">
+            <span>Озон (O₃)</span></a>
+        </li>
+      
+      {% endblock %}
+    </main>
+</body>
+</html>

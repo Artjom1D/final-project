@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../static/css/style.css"> 
+  <title>Глобальное потепление</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__text">
+      <h1>Твой результат!</h1>
+    </div>
+  </header>
+  <main>
+    {% block content %}
+    <h2 class="main__title main__title--margin">Вы являетесь</h2>
+    <div class="main__rez" id="end">
+        {% if result <= 10 %}
+          <h2 class="main__title main__title--margin">Новичком</h2>
+          
+          <p class="main__title2 ">Не расстраивайтесь, тема глобального потепления действительно сложна и требует глубоких знаний.</p><br>
+          <p class="main__title2 ">Попробуйте еще раз, и не стесняйтесь изучать больше информации по этой важной теме, всместе с другими!</p><br>
+        {% elif result >= 10 and result < 20 %}
+          <h2 class="main__title main__title--margin">Студентом</h2>
+
+          <p class="main__title2 ">Хорошее начало! Один правильный ответ – это уже прогресс. </p><br>
+          <p class="main__title2 ">Продолжайте изучать тему глобального потепления, чтобы узнать больше и улучшить свои результаты.</p><br>
+          <p class="main__title2 ">С этим тебе помогу дружелюбные пользователи нашего онлайн - дневника!</p><br>
+        {% elif result >= 20 and result < 30 %}
+          <h2 class="main__title main__title--margin">Профессионалом</h2>
+          
+          <p class="main__title2 ">Отличная работа! Вы правильно ответили на два вопроса, что показывает ваш хороший уровень знаний.</p><br>
+          <p class="main__title2 ">Еще немного усилий, и вы сможете стать настоящим экспертом в этой области.</p><br>
+          <p class="main__title2 ">Улучшай и делись знаниями с другими пользователями! ;) </p> <br>
+        {% elif result >= 30 %}
+         <h2 class="main__title main__title--margin">Экспертом</h2>
+          
+         <p class="main__title2 ">Впечатляюще!</p><br>
+         <p class="main__title2 ">Вы правильно ответили на все вопросы и продемонстрировали глубокое понимание проблемы глобального потепления.</p><br>
+         <p class="main__title2 ">Продолжайте в том же духе и делитесь своими знаниями с окружающими!</p> <br>
+        {%endif%}
+    </div>
+    <br><br><br><br><br>
+    <a class="main__link" href="/" >Вернуться к ВХОДУ</a>
+    {% endblock %}
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>
