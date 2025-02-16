@@ -4,12 +4,12 @@ body::-webkit-scrollbar {
   }
   
   body::-webkit-scrollbar-track {
-    background: #6d3e38;        /* цвет зоны отслеживания */
+    background: #6d3e38;     
   }
   
   body::-webkit-scrollbar-thumb {
-    background-color: rgba(26, 3, 8, 0.4);    /* цвет бегунка */
-    border-radius: 20px;       /* округлось бегунка */
+    background-color: rgba(26, 3, 8, 0.4);    
+    border-radius: 20px;      
     border: none;
   }
 
